@@ -34,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
         if (navigationView != null) {
             setupDrawerContent(navigationView);
         }
+
+        // FIXME: 7/9/16 change to findbytag
+        TasksFragment tasksFragment =
+                (TasksFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
+        if (tasksFragment == null) {
+            // Create the fragment
+            tasksFragment = TasksFragment.newInstance();
+            ActivityUtils.addFragmentToActivity(
+                    getSupportFragmentManager(), tasksFragment, R.id.contentFrame);
+        }
     }
 
 
