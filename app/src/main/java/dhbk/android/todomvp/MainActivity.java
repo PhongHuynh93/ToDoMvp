@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                         // Close the navigation drawer when an item is selected.
-                        menuItem.setChecked(true);
                         mDrawerLayout.closeDrawers();
                         return true;
                     }
