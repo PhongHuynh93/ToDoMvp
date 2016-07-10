@@ -134,6 +134,8 @@ public class TasksFragment extends Fragment implements TasksContract.View{
             }
         });
 
+        // set this fragment have a toolbar
+        setHasOptionsMenu(true);
 
         return root;
     }
