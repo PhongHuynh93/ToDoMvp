@@ -17,10 +17,9 @@ public interface TasksContract {
 
         void addNewTask();
 
+
         void openTaskDetails(@NonNull Task requestedTask);
-
         void completeTask(@NonNull Task completedTask);
-
         void activateTask(@NonNull Task activeTask);
 
         void clearCompletedTasks();
