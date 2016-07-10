@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -61,7 +64,16 @@ public class TasksFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tasks_frag, container, false);
+        View root = inflater.inflate(R.layout.tasks_frag, container, false);
+
+
+        // Set up tasks view
+        ListView listView = (ListView) root.findViewById(R.id.tasks_list);
+        listView.setAdapter(mListAdapter);
+        mFilteringLabelView = (TextView) root.findViewById(R.id.filteringLabel);
+        mTasksView = (LinearLayout) root.findViewById(R.id.tasksLL);
+
+        return root;
     }
 
     @Override
