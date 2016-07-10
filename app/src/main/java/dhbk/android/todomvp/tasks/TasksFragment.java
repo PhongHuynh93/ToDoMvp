@@ -201,6 +201,12 @@ public class TasksFragment extends Fragment implements TasksContract.View{
         startActivityForResult(intent, AddEditTaskActivity.REQUEST_ADD_TASK);
     }
 
+    // after come back from AddEditTaskActivity
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        mPresenter.result(requestCode, resultCode);
+    }
+
     @Override
     public void showTaskDetailsUi(String taskId) {
 
