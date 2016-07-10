@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -145,6 +147,14 @@ public class TasksFragment extends Fragment implements TasksContract.View{
         super.onResume();
         mPresenter.start();
     }
+
+
+    // create another menu override the mainactivity menu
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.tasks_fragment_menu, menu);
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     // method for this task fragment to implement
