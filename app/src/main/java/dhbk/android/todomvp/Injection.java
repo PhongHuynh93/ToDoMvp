@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 
 import dhbk.android.todomvp.data.source.TasksDataSource;
 import dhbk.android.todomvp.data.source.TasksRepository;
+import dhbk.android.todomvp.data.source.local.TasksLocalDataSource;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -18,7 +19,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * a fake instance of the class to isolate the dependencies and run a test hermetically.
  */
 public class Injection {
-
     public static TasksRepository provideTasksRepository(@NonNull Context context) {
         checkNotNull(context);
         return TasksRepository.getInstance(FakeTasksRemoteDataSource.getInstance(),

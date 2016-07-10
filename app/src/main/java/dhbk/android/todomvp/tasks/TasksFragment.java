@@ -25,6 +25,8 @@ import dhbk.android.todomvp.R;
 import dhbk.android.todomvp.data.Task;
 import dhbk.android.todomvp.utils.TasksAdapter;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 
 // TODO: 7/10/16 2
 /**
@@ -266,7 +268,7 @@ public class TasksFragment extends Fragment implements TasksContract.View{
 
     @Override
     public void setPresenter(TasksContract.Presenter presenter) {
-
+        mPresenter = checkNotNull(presenter);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////

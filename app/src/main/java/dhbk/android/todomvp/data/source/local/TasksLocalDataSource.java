@@ -7,7 +7,6 @@ package dhbk.android.todomvp.data.source.local;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import dhbk.android.todomvp.TasksDbHelper;
 import dhbk.android.todomvp.data.Task;
 import dhbk.android.todomvp.data.source.TasksDataSource;
 
