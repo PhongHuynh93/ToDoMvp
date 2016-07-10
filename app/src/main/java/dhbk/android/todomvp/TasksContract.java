@@ -17,7 +17,7 @@ public interface TasksContract {
 
         void addNewTask();
 
-
+        // 3 methods to implements the task click listener
         void openTaskDetails(@NonNull Task requestedTask);
         void completeTask(@NonNull Task completedTask);
         void activateTask(@NonNull Task activeTask);

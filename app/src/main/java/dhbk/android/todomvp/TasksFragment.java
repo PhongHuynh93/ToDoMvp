@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 // TODO: 7/10/16 2
@@ -109,4 +110,99 @@ public class TasksFragment extends Fragment implements TasksContract.View{
         super.onResume();
         mPresenter.start();
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    // method for this task fragment to implement
+    @Override
+    public void setLoadingIndicator(boolean active) {
+
+    }
+
+    @Override
+    public void showTasks(List<Task> tasks) {
+
+    }
+
+    @Override
+    public void showAddTask() {
+
+    }
+
+    @Override
+    public void showTaskDetailsUi(String taskId) {
+
+    }
+
+    @Override
+    public void showTaskMarkedComplete() {
+
+    }
+
+    @Override
+    public void showTaskMarkedActive() {
+
+    }
+
+    @Override
+    public void showCompletedTasksCleared() {
+
+    }
+
+    @Override
+    public void showLoadingTasksError() {
+
+    }
+
+    @Override
+    public void showNoTasks() {
+
+    }
+
+    @Override
+    public void showActiveFilterLabel() {
+
+    }
+
+    @Override
+    public void showCompletedFilterLabel() {
+
+    }
+
+    @Override
+    public void showAllFilterLabel() {
+
+    }
+
+    @Override
+    public void showNoActiveTasks() {
+
+    }
+
+    @Override
+    public void showNoCompletedTasks() {
+
+    }
+
+    @Override
+    public void showSuccessfullySavedMessage() {
+
+    }
+
+    @Override
+    public boolean isActive() {
+        return false;
+    }
+
+    @Override
+    public void showFilteringPopUpMenu() {
+
+    }
+
+    @Override
+    public void setPresenter(TasksContract.Presenter presenter) {
+
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    // end method for this task fragment to implement
 }
