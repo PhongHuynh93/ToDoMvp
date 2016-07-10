@@ -18,6 +18,7 @@ import java.util.List;
  * operation on database or network should be executed in a different thread.
  */
 
+// TODO: 7/10/16 5  create interface for reposition
 public interface TasksDataSource {
 
     interface LoadTasksCallback {

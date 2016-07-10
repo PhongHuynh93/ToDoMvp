@@ -6,6 +6,8 @@ package dhbk.android.todomvp;
 
 import android.support.annotation.NonNull;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 /**
  * Concrete implementation to load tasks from the data sources into a cache.
  * <p>
@@ -13,8 +15,11 @@ import android.support.annotation.NonNull;
  * obtained from the server, by using the remote data source only if the local database doesn't
  * exist or is empty.
  */
+// TODO: 7/10/16 6
 public class TasksRepository implements TasksDataSource{
     private static TasksRepository INSTANCE = null;
+    private final TasksDataSource mTasksRemoteDataSource;
+    private final TasksDataSource mTasksLocalDataSource;
 
     /**
      * Returns the single instance of this class, creating it if necessary.
@@ -23,6 +28,8 @@ public class TasksRepository implements TasksDataSource{
      * @param tasksLocalDataSource  the device storage data source
      * @return the {@link TasksRepository} instance
      */
+
+    // pass 2 interface instance
     public static TasksRepository getInstance(TasksDataSource tasksRemoteDataSource,
                                               TasksDataSource tasksLocalDataSource) {
         if (INSTANCE == null) {
@@ -30,6 +37,14 @@ public class TasksRepository implements TasksDataSource{
         }
         return INSTANCE;
     }
+
+    // Prevent direct instantiation.
+    private TasksRepository(@NonNull TasksDataSource tasksRemoteDataSource,
+                            @NonNull TasksDataSource tasksLocalDataSource) {
+        mTasksRemoteDataSource = checkNotNull(tasksRemoteDataSource);
+        mTasksLocalDataSource = checkNotNull(tasksLocalDataSource);
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     // method for this task reposition to implement
