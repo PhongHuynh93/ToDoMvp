@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -184,8 +185,23 @@ public class TasksFragment extends Fragment implements TasksContract.View{
     ////////////////////////////////////////////////////////////////////////////////////////////
     // method for this task fragment to implement
     @Override
-    public void setLoadingIndicator(boolean active) {
+    public void setLoadingIndicator(final boolean active) {
 
+        // TODO: 7/10/16 a callback to update view in this frag, must check getview to determine if this frag hasn't destroyed
+        if (getView() == null) {
+            return;
+        }
+        final SwipeRefreshLayout srl =
+                (SwipeRefreshLayout) getView().findViewById(R.id.refresh_layout);
+
+        // Make sure setRefreshing() is called after the layout is done with everything else.
+        // TODO: 7/10/16 a callback must use post to make this run on UI threads.
+        srl.post(new Runnable() {
+            @Override
+            public void run() {
+                srl.setRefreshing(active);
+            }
+        });
     }
 
     @Override
@@ -205,6 +221,12 @@ public class TasksFragment extends Fragment implements TasksContract.View{
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         mPresenter.result(requestCode, resultCode);
+    }
+
+    // show success full method when add success.
+    @Override
+    public void showSuccessfullySavedMessage() {
+        showMessage(getString(R.string.successfully_saved_task_message));
     }
 
     @Override
@@ -262,10 +284,6 @@ public class TasksFragment extends Fragment implements TasksContract.View{
 
     }
 
-    @Override
-    public void showSuccessfullySavedMessage() {
-
-    }
 
     @Override
     public boolean isActive() {
@@ -284,4 +302,9 @@ public class TasksFragment extends Fragment implements TasksContract.View{
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     // end method for this task fragment to implement
+
+    private void showMessage(String message) {
+        Snackbar.make(getView(), message, Snackbar.LENGTH_LONG).show();
+    }
+
 }
