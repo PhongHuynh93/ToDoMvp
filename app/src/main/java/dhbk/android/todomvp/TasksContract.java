@@ -10,6 +10,11 @@ import java.util.List;
 public interface TasksContract {
     // TODO: 7/10/16 3 make a interface presenter, so class implements this becomes the presenter
     interface Presenter extends BasePresenter {
+        // 3 methods to implements the task click listener
+        void openTaskDetails(@NonNull Task requestedTask);
+        void completeTask(@NonNull Task completedTask);
+        void activateTask(@NonNull Task activeTask);
+
 
         void result(int requestCode, int resultCode);
 
@@ -17,10 +22,7 @@ public interface TasksContract {
 
         void addNewTask();
 
-        // 3 methods to implements the task click listener
-        void openTaskDetails(@NonNull Task requestedTask);
-        void completeTask(@NonNull Task completedTask);
-        void activateTask(@NonNull Task activeTask);
+
 
         void clearCompletedTasks();
 
