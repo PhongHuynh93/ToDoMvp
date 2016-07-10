@@ -24,7 +24,9 @@ public class TasksPresenter implements TasksContract.Presenter {
 
 
     // a model and a view (taskfragment), call view to set the presenter
+    // TODO: 7/10/16 REMEMBER THAT THE CONSTRUCTOR OF THIS CLASS RECEIVE THE INTERFACE - NHỜ VÀO QUY TẮC SÔ 5 TRONG SOLID
     public TasksPresenter(@NonNull TasksRepository tasksRepository, @NonNull TasksContract.View tasksView) {
+        // NHỚ CHECK NULL TRONG 2 CLASS
         mTasksRepository = checkNotNull(tasksRepository, "tasksRepository cannot be null");
         mTasksView = checkNotNull(tasksView, "tasksView cannot be null!");
         mTasksView.setPresenter(this);
