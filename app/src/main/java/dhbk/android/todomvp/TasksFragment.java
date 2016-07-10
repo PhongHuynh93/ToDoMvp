@@ -10,6 +10,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -155,6 +156,22 @@ public class TasksFragment extends Fragment implements TasksContract.View{
         inflater.inflate(R.menu.tasks_fragment_menu, menu);
     }
 
+    // listen when click icon in toolbar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_clear:
+                mPresenter.clearCompletedTasks();
+                break;
+            case R.id.menu_filter:
+                showFilteringPopUpMenu();
+                break;
+            case R.id.menu_refresh:
+                mPresenter.loadTasks(true);
+                break;
+        }
+        return true;
+    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     // method for this task fragment to implement
