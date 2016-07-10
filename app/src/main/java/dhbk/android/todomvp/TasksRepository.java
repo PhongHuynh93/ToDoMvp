@@ -4,6 +4,8 @@ package dhbk.android.todomvp;
  * Created by huynhducthanhphong on 7/10/16.
  */
 
+import android.support.annotation.NonNull;
+
 /**
  * Concrete implementation to load tasks from the data sources into a cache.
  * <p>
@@ -29,4 +31,62 @@ public class TasksRepository implements TasksDataSource{
         return INSTANCE;
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    // method for this task reposition to implement
+    @Override
+    public void getTasks(@NonNull LoadTasksCallback callback) {
+
+    }
+
+    @Override
+    public void getTask(@NonNull String taskId, @NonNull GetTaskCallback callback) {
+
+    }
+
+    @Override
+    public void saveTask(@NonNull Task task) {
+
+    }
+
+    @Override
+    public void completeTask(@NonNull Task task) {
+
+    }
+
+    @Override
+    public void completeTask(@NonNull String taskId) {
+
+    }
+
+    @Override
+    public void activateTask(@NonNull Task task) {
+
+    }
+
+    @Override
+    public void activateTask(@NonNull String taskId) {
+
+    }
+
+    @Override
+    public void clearCompletedTasks() {
+
+    }
+
+    @Override
+    public void refreshTasks() {
+
+    }
+
+    @Override
+    public void deleteAllTasks() {
+
+    }
+
+    @Override
+    public void deleteTask(@NonNull String taskId) {
+
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    // end method for this task reposition to implement
 }
