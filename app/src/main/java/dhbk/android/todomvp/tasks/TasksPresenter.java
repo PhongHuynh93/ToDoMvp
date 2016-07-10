@@ -1,10 +1,12 @@
 package dhbk.android.todomvp.tasks;
 
+import android.app.Activity;
 import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import dhbk.android.todomvp.addedittask.AddEditTaskActivity;
 import dhbk.android.todomvp.data.Task;
 import dhbk.android.todomvp.data.source.TasksDataSource;
 import dhbk.android.todomvp.data.source.TasksRepository;
@@ -50,9 +52,11 @@ public class TasksPresenter implements TasksContract.Presenter {
 
     @Override
     public void result(int requestCode, int resultCode) {
-
+        // If a task was successfully added, show snackbar
+        if (AddEditTaskActivity.REQUEST_ADD_TASK == requestCode && Activity.RESULT_OK == resultCode) {
+            mTasksView.showSuccessfullySavedMessage();
+        }
     }
-
 
     @Override
     public void addNewTask() {
