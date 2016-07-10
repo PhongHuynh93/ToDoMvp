@@ -2,16 +2,41 @@ package dhbk.android.todomvp;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TasksFragment extends Fragment {
+    private TasksContract.Presenter mPresenter;
+
+
+    /**
+     * TODO 2 Listener for clicks on tasks in the ListView, pass this interface to adapter
+     */
+    TaskItemListener mItemListener = new TaskItemListener() {
+        @Override
+        public void onTaskClick(Task clickedTask) {
+            mPresenter.openTaskDetails(clickedTask);
+        }
+
+        @Override
+        public void onCompleteTaskClick(Task completedTask) {
+            mPresenter.completeTask(completedTask);
+        }
+
+        @Override
+        public void onActivateTaskClick(Task activatedTask) {
+            mPresenter.activateTask(activatedTask);
+        }
+    };
 
 
     public TasksFragment() {
@@ -23,6 +48,11 @@ public class TasksFragment extends Fragment {
     }
 
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mListAdapter = new TasksAdapter(new ArrayList<Task>(0), mItemListener);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
