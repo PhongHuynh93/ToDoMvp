@@ -50,6 +50,7 @@ public class TasksFragment extends Fragment {
     }
 
 
+    // create an empty adapter in oncreate + pass interface to listen when item click
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
