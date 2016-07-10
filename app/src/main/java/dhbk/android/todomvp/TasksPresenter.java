@@ -2,10 +2,25 @@ package dhbk.android.todomvp;
 
 import android.support.annotation.NonNull;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 /**
  * Created by huynhducthanhphong on 7/10/16.
  */
 public class TasksPresenter implements TasksContract.Presenter {
+
+
+    private final TasksRepository mTasksRepository;
+    private final TasksContract.View mTasksView;
+
+    // a model and a view (taskfragment)
+    public TasksPresenter(@NonNull TasksRepository tasksRepository, @NonNull TasksContract.View tasksView) {
+        mTasksRepository = checkNotNull(tasksRepository, "tasksRepository cannot be null");
+        mTasksView = checkNotNull(tasksView, "tasksView cannot be null!");
+        mTasksView.setPresenter(this);
+    }
+
+
     @Override
     public void openTaskDetails(@NonNull Task requestedTask) {
 

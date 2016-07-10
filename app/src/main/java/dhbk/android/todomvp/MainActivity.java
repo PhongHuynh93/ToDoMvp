@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager(), tasksFragment, R.id.contentFrame);
         }
 
-        // Create the presenter
+        // Create the presenter, pass model and view to presenter
         mTasksPresenter = new TasksPresenter(
                 Injection.provideTasksRepository(getApplicationContext()), tasksFragment);
     }
