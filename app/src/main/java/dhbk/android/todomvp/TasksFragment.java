@@ -61,4 +61,9 @@ public class TasksFragment extends Fragment {
         return inflater.inflate(R.layout.tasks_frag, container, false);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mPresenter.start();
+    }
 }
