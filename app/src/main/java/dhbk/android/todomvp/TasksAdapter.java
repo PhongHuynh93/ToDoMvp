@@ -15,12 +15,14 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Created by huynhducthanhphong on 7/10/16.
  */
 
+// TODO: 7/10/16 3
 public class TasksAdapter extends BaseAdapter {
 
     private List<Task> mTasks;
     private TaskItemListener mItemListener;
 
     public TasksAdapter(List<Task> tasks, TaskItemListener itemListener) {
+        // check null when receiver data (not declare new yet)
         setList(tasks);
         mItemListener = itemListener;
     }
@@ -30,6 +32,7 @@ public class TasksAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    // chechk the para not null when pass to adapter
     private void setList(List<Task> tasks) {
         mTasks = checkNotNull(tasks);
     }

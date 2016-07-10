@@ -11,15 +11,17 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 
+// TODO: 7/10/16 2
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TasksFragment extends Fragment {
     private TasksContract.Presenter mPresenter;
+    private TasksAdapter mListAdapter;
 
 
     /**
-     * TODO 2 Listener for clicks on tasks in the ListView, pass this interface to adapter
+     *  Listener for clicks on tasks in the ListView, pass this interface to adapter
      */
     TaskItemListener mItemListener = new TaskItemListener() {
         @Override
