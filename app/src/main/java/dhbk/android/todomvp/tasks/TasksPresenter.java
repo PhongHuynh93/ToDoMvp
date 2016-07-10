@@ -23,7 +23,7 @@ public class TasksPresenter implements TasksContract.Presenter {
     private TasksFilterType mCurrentFiltering = TasksFilterType.ALL_TASKS; // load all tasks at the first time.
 
 
-    // a model and a view (taskfragment)
+    // a model and a view (taskfragment), call view to set the presenter
     public TasksPresenter(@NonNull TasksRepository tasksRepository, @NonNull TasksContract.View tasksView) {
         mTasksRepository = checkNotNull(tasksRepository, "tasksRepository cannot be null");
         mTasksView = checkNotNull(tasksView, "tasksView cannot be null!");
