@@ -99,8 +99,6 @@ public class TasksFragment extends Fragment implements TasksContract.View{
         mFilteringLabelView = (TextView) root.findViewById(R.id.filteringLabel);
         mTasksView = (LinearLayout) root.findViewById(R.id.tasksLL);
 
-
-
         // Set up  no tasks view
         mNoTasksView = root.findViewById(R.id.noTasks);
         mNoTaskIcon = (ImageView) root.findViewById(R.id.noTasksIcon);
@@ -114,7 +112,7 @@ public class TasksFragment extends Fragment implements TasksContract.View{
         });
 
 
-        // Set up floating action button
+        // Set up floating action button, add new task when click
         FloatingActionButton fab =
                 (FloatingActionButton) getActivity().findViewById(R.id.fab_add_task);
         fab.setImageResource(R.drawable.ic_add);
@@ -134,7 +132,8 @@ public class TasksFragment extends Fragment implements TasksContract.View{
                 ContextCompat.getColor(getActivity(), R.color.colorAccent),
                 ContextCompat.getColor(getActivity(), R.color.colorPrimaryDark)
         );
-        // Set the scrolling view in the custom SwipeRefreshLayout.
+
+        // Set the scrolling view in the custom SwipeRefreshLayout., load task when scroll (connect to db to get the database)
         swipeRefreshLayout.setScrollUpChild(listView);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -149,6 +148,7 @@ public class TasksFragment extends Fragment implements TasksContract.View{
         return root;
     }
 
+    // at first, load tasks when open app
     @Override
     public void onResume() {
         super.onResume();

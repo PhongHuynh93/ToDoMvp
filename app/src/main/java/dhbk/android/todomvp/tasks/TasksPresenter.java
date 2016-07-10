@@ -51,13 +51,6 @@ public class TasksPresenter implements TasksContract.Presenter {
 
     }
 
-    // connect to db to load task from network
-    @Override
-    public void loadTasks(boolean forceUpdate) {
-        // Simplification for sample: a network reload will be forced on first load.
-        loadTasks(forceUpdate || mFirstLoad, true);
-        mFirstLoad = false;
-    }
 
     @Override
     public void addNewTask() {
@@ -79,11 +72,19 @@ public class TasksPresenter implements TasksContract.Presenter {
         return null;
     }
 
+    // at first, load the task automaticlly, not force update -> so pass false
     @Override
     public void start() {
         loadTasks(false);
     }
 
+    // connect to db to load task from network
+    @Override
+    public void loadTasks(boolean forceUpdate) {
+        // Simplification for sample: a network reload will be forced on first load.
+        loadTasks(forceUpdate || mFirstLoad, true);
+        mFirstLoad = false;
+    }
 
 
     // connect to db to load task from network
