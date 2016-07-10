@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,11 +19,22 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class TasksFragment extends Fragment {
+    // declare presenter
     private TasksContract.Presenter mPresenter;
+
+    // declare listview
     private TasksAdapter mListAdapter;
     private TextView mFilteringLabelView; //
     private LinearLayout mTasksView;
+
+
+    // declare no task layout
+    private View mNoTasksView;
+    private ImageView mNoTaskIcon;
+    private TextView mNoTaskMainView;
+    private TextView mNoTaskAddView;
 
 
     /**
@@ -44,7 +56,6 @@ public class TasksFragment extends Fragment {
             mPresenter.activateTask(activatedTask);
         }
     };
-
 
     public TasksFragment() {
         // Required empty public constructor
@@ -74,6 +85,21 @@ public class TasksFragment extends Fragment {
         listView.setAdapter(mListAdapter);
         mFilteringLabelView = (TextView) root.findViewById(R.id.filteringLabel);
         mTasksView = (LinearLayout) root.findViewById(R.id.tasksLL);
+
+
+
+        // Set up  no tasks view
+        mNoTasksView = root.findViewById(R.id.noTasks);
+        mNoTaskIcon = (ImageView) root.findViewById(R.id.noTasksIcon);
+        mNoTaskMainView = (TextView) root.findViewById(R.id.noTasksMain);
+        mNoTaskAddView = (TextView) root.findViewById(R.id.noTasksAdd);
+        mNoTaskAddView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddTask();
+            }
+        });
+
 
         return root;
     }
