@@ -21,6 +21,8 @@ import java.util.ArrayList;
 public class TasksFragment extends Fragment {
     private TasksContract.Presenter mPresenter;
     private TasksAdapter mListAdapter;
+    private TextView mFilteringLabelView; //
+    private LinearLayout mTasksView;
 
 
     /**
@@ -67,7 +69,7 @@ public class TasksFragment extends Fragment {
         View root = inflater.inflate(R.layout.tasks_frag, container, false);
 
 
-        // Set up tasks view
+        // Set up listview + label below listview + linearlayout that contains label and listview
         ListView listView = (ListView) root.findViewById(R.id.tasks_list);
         listView.setAdapter(mListAdapter);
         mFilteringLabelView = (TextView) root.findViewById(R.id.filteringLabel);
