@@ -1,4 +1,4 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.tasks;
 
 /**
  * Used with the filter spinner in the tasks list.

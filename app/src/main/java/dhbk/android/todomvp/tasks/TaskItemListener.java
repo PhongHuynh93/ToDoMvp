@@ -1,4 +1,6 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.tasks;
+
+import dhbk.android.todomvp.data.Task;
 
 /**
  * Created by huynhducthanhphong on 7/10/16.

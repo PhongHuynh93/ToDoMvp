@@ -1,11 +1,11 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.data.source.local;
 
 import android.provider.BaseColumns;
 
 /**
  * Created by huynhducthanhphong on 7/10/16.
  */
-
+// TODO: 7/10/16 7
 /**
  * The contract used for the db to save the tasks locally.
  */

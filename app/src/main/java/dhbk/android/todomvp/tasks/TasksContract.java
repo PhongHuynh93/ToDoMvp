@@ -1,8 +1,12 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.tasks;
 
 import android.support.annotation.NonNull;
 
 import java.util.List;
+
+import dhbk.android.todomvp.BasePresenter;
+import dhbk.android.todomvp.BaseView;
+import dhbk.android.todomvp.data.Task;
 
 /**
  * Created by huynhducthanhphong on 7/10/16.

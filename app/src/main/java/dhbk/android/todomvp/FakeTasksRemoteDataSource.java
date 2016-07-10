@@ -6,6 +6,9 @@ package dhbk.android.todomvp;
 
 import android.support.annotation.NonNull;
 
+import dhbk.android.todomvp.data.Task;
+import dhbk.android.todomvp.data.source.TasksDataSource;
+
 /**
  * Implementation of a remote data source with static access to the data for easy testing.
  */

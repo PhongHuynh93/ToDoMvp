@@ -1,7 +1,9 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.statistics;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import dhbk.android.todomvp.R;
 
 public class StatisticsActivity extends AppCompatActivity {
 

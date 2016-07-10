@@ -7,6 +7,9 @@ package dhbk.android.todomvp;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import dhbk.android.todomvp.data.source.TasksDataSource;
+import dhbk.android.todomvp.data.source.TasksRepository;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**

@@ -1,4 +1,4 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.tasks;
 
 import android.content.Context;
 import android.support.v4.view.ViewCompat;

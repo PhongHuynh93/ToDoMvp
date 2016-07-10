@@ -1,6 +1,9 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.tasks;
 
 import android.support.annotation.NonNull;
+
+import dhbk.android.todomvp.data.Task;
+import dhbk.android.todomvp.data.source.TasksRepository;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

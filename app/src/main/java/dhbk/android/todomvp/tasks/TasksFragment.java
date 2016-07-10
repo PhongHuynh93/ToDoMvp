@@ -1,4 +1,4 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.tasks;
 
 
 import android.os.Bundle;
@@ -20,6 +20,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import dhbk.android.todomvp.R;
+import dhbk.android.todomvp.data.Task;
+import dhbk.android.todomvp.utils.TasksAdapter;
 
 
 // TODO: 7/10/16 2

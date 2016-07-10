@@ -1,4 +1,4 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.utils;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,10 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.List;
+
+import dhbk.android.todomvp.R;
+import dhbk.android.todomvp.data.Task;
+import dhbk.android.todomvp.tasks.TaskItemListener;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

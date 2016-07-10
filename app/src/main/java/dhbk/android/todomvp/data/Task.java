@@ -1,4 +1,4 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.data;
 
 import android.support.annotation.Nullable;
 import com.google.common.base.Objects;

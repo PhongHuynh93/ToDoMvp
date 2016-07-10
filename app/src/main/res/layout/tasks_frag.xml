@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 
-<dhbk.android.todomvp.ScrollChildSwipeRefreshLayout
+<dhbk.android.todomvp.tasks.ScrollChildSwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/refresh_layout"
     android:layout_width="match_parent"
@@ -82,5 +82,5 @@
 
         </LinearLayout>
     </RelativeLayout>
-</dhbk.android.todomvp.ScrollChildSwipeRefreshLayout>
+</dhbk.android.todomvp.tasks.ScrollChildSwipeRefreshLayout>
 

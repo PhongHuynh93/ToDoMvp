@@ -1,4 +1,4 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.data.source.local;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -1,4 +1,4 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.tasks;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,11 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import dhbk.android.todomvp.utils.ActivityUtils;
+import dhbk.android.todomvp.Injection;
+import dhbk.android.todomvp.R;
+import dhbk.android.todomvp.statistics.StatisticsActivity;
 
 // TODO: 7/10/16 1
 public class MainActivity extends AppCompatActivity {

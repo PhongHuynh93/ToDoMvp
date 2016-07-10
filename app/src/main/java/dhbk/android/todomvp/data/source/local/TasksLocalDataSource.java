@@ -1,4 +1,4 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.data.source.local;
 
 /**
  * Created by huynhducthanhphong on 7/10/16.
@@ -7,12 +7,16 @@ package dhbk.android.todomvp;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import dhbk.android.todomvp.TasksDbHelper;
+import dhbk.android.todomvp.data.Task;
+import dhbk.android.todomvp.data.source.TasksDataSource;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Concrete implementation of a data source as a db.
  */
-public class TasksLocalDataSource implements TasksDataSource{
+public class TasksLocalDataSource implements TasksDataSource {
     private static TasksLocalDataSource INSTANCE;
     private final TasksDbHelper mDbHelper;
 

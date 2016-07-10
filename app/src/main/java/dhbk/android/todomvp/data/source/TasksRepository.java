@@ -1,10 +1,12 @@
-package dhbk.android.todomvp;
+package dhbk.android.todomvp.data.source;
 
 /**
  * Created by huynhducthanhphong on 7/10/16.
  */
 
 import android.support.annotation.NonNull;
+
+import dhbk.android.todomvp.data.Task;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -16,7 +18,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * exist or is empty.
  */
 // TODO: 7/10/16 6
-public class TasksRepository implements TasksDataSource{
+public class TasksRepository implements TasksDataSource {
     private static TasksRepository INSTANCE = null;
     private final TasksDataSource mTasksRemoteDataSource;
     private final TasksDataSource mTasksLocalDataSource;
