@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 
-public class TasksFragment extends Fragment {
+public class TasksFragment extends Fragment implements TasksContract.View{
     // declare presenter
     private TasksContract.Presenter mPresenter;
 
