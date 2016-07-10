@@ -1,6 +1,7 @@
 package dhbk.android.todomvp.tasks;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dhbk.android.todomvp.R;
+import dhbk.android.todomvp.addedittask.AddEditTaskActivity;
 import dhbk.android.todomvp.data.Task;
 import dhbk.android.todomvp.utils.TasksAdapter;
 
@@ -191,9 +193,12 @@ public class TasksFragment extends Fragment implements TasksContract.View{
 
     }
 
+    // connect to another activity to create a task
     @Override
     public void showAddTask() {
-
+        Intent intent = new Intent(getContext(), AddEditTaskActivity.class);
+        // code là code của class nhận
+        startActivityForResult(intent, AddEditTaskActivity.REQUEST_ADD_TASK);
     }
 
     @Override
